@@ -6,7 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Networking
 Source0:	http://www.hping.org/netbrake/%{name}-%{version}.tar.gz
-Patch0:		ftp://ftp.linuxpl.com/pub/cvs/compil.patch
+Patch0:		ftp://ftp.linuxpl.com/pub/cvs/make.patch
 URL:		http://www.hping.org/netbrake/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
