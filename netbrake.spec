@@ -1,13 +1,13 @@
 Summary:	Netbrake is an utility to limit the bandwidth used by a process
 Summary(pl):	Netbrake jest narzêdziem do ograniczania ³±cza u¿ywanego przez proces
 Name:		netbrake
-Version:	0.1
-Release:	2
+Version:	0.2
+Release:	1
 # netbrake app contains GPLed antigetopt.c, so it's whole GPLed
 License:	GPL (application), BSD-like (libnetbrake)
 Group:		Applications/Networking
 Source0:	http://www.hping.org/netbrake/%{name}-%{version}.tar.gz
-# Source0-md5:	d6be54c788699a6c45120ab8320db9ab
+# Source0-md5:	42f61481cdb910bddd1105d48367bdd2
 Patch0:		%{name}-make.patch
 Patch1:		%{name}-types.patch
 URL:		http://www.hping.org/netbrake/
@@ -35,7 +35,7 @@ plików o HTTP, dziêki czemu mo¿na u¿ywaæ standardowych narzêdzi
 tekstowych na URL-ach.
 
 %prep
-%setup -q -n %{name}_%{version}
+%setup -q -n %{name}
 %patch0 -p0
 %patch1 -p1
 
