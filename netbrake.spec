@@ -3,7 +3,8 @@ Summary(pl):	Netbrake jest narzêdziem do ograniczania ³±cza u¿ywanego przez proc
 Name:		netbrake
 Version:	0.1
 Release:	2
-License:	GPL
+# netbrake app contains GPLed antigetopt.c, so it's whole GPLed
+License:	GPL (application), BSD-like (libnetbrake)
 Group:		Applications/Networking
 Source0:	http://www.hping.org/netbrake/%{name}-%{version}.tar.gz
 # Source0-md5:	d6be54c788699a6c45120ab8320db9ab
@@ -21,13 +22,17 @@ slow web/irc/... experience. I use it mostly to download big files
 (like the kernel source code) with wget.
 
 Netbrake also implements a very simple HTTP filesystem extension, so
-you can use the standard text utils against some URL
+you can use the standard text utils against some URL.
 
 %description -l pl
-Netbrake jest narzêdziem do ograniczania przepustowosci ³acza
+Netbrake jest narzêdziem do ograniczania przepustowo¶ci ³±cza
 u¿ywanego przez proces. Nie wymaga modyfikacji j±dra, dzia³a na
-zwyk³ym koncie, jest u¿ywany g³ównie wtedy, gdy chcemy ¶ci±gn±æ du¿e
-pliki np za. pomoc± wgeta czy lynksa.
+zwyk³ym koncie, jest u¿ywane g³ównie wtedy, gdy chcemy ¶ci±gn±æ du¿e
+pliki np. za pomoc± wgeta czy lynksa.
+
+Netbrake ma tak¿e zaimplementowane proste rozszerzenie systemu
+plików o HTTP, dziêki czemu mo¿na u¿ywaæ standardowych narzêdzi
+tekstowych na URL-ach.
 
 %prep
 %setup -q -n %{name}_%{version}
@@ -35,25 +40,29 @@ pliki np za. pomoc± wgeta czy lynksa.
 %patch1 -p1
 
 %build
-%configure
+# not autoconf configure
+./configure
 
-%{__make} CFLAGS="%{rpmcflags} " CC="%{__cc}"
+%{__make} \
+	CFLAGS="%{rpmcflags}" \
+	CC="%{__cc}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_libdir},%{_bindir}}
 
 %{__make} install \
-	      LIBPATH=$RPM_BUILD_ROOT%{_libdir} BINPATH=$RPM_BUILD_ROOT%{_bindir}
-
-%post    -p /sbin/ldconfig
-%postun  -p /sbin/ldconfig
+	BINPATH=$RPM_BUILD_ROOT%{_bindir} \
+	LIBPATH=$RPM_BUILD_ROOT%{_libdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
+
+%post    -p /sbin/ldconfig
+%postun  -p /sbin/ldconfig
 
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS LICENSE THANKS README TODO
 %attr(755,root,root) %{_bindir}/netbrake
-%attr(755,root,root) %{_libdir}/libnetbrake.so.*
+%attr(755,root,root) %{_libdir}/libnetbrake.so.*.*
