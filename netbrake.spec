@@ -2,11 +2,12 @@ Summary:	Netbrake is an utility to limit the bandwidth used by a process
 Summary(pl):	Netbrake jest narzêdziem do ograniczania ³±cza u¿ywanego przez proces
 Name:		netbrake
 Version:	0.1
-Release:	1
+Release:	2
 License:	GPL
 Group:		Applications/Networking
 Source0:	http://www.hping.org/netbrake/%{name}-%{version}.tar.gz
 Patch0:		%{name}-make.patch
+Patch1:		%{name}-types.patch
 URL:		http://www.hping.org/netbrake/
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -30,6 +31,7 @@ pliki np za. pomoc± wgeta czy lynksa.
 %prep
 %setup -q -n %{name}_%{version}
 %patch0 -p0
+%patch1 -p1
 
 %build
 %configure
@@ -43,8 +45,6 @@ install -d $RPM_BUILD_ROOT{%{_libdir},%{_bindir}}
 %{__make} install \
 	      LIBPATH=$RPM_BUILD_ROOT%{_libdir} BINPATH=$RPM_BUILD_ROOT%{_bindir}
 
-gzip -9nf AUTHORS LICENSE THANKS README TODO
-
 %post    -p /sbin/ldconfig
 %postun  -p /sbin/ldconfig
 
@@ -53,6 +53,6 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc *.gz
+%doc AUTHORS LICENSE THANKS README TODO
 %attr(755,root,root) %{_bindir}/netbrake
 %attr(755,root,root) %{_libdir}/libnetbrake.so.*
