@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		Applications/Networking
 Source0:	http://www.hping.org/netbrake/%{name}-%{version}.tar.gz
+# Source0-md5:	d6be54c788699a6c45120ab8320db9ab
 Patch0:		%{name}-make.patch
 Patch1:		%{name}-types.patch
 URL:		http://www.hping.org/netbrake/
