@@ -1,0 +1,38 @@
+--- netbrake_0.1/libnetbrake.c.orig	Mon Sep  2 14:05:32 2002
++++ netbrake_0.1/libnetbrake.c	Mon Sep  2 14:39:38 2002
+@@ -235,7 +235,7 @@
+ 	return retval;
+ }
+ 
+-int recv(int s, void *buf, size_t len, int flags)
++ssize_t recv(int s, void *buf, size_t len, int flags)
+ {
+ 	int retval;
+ 
+@@ -244,7 +244,7 @@
+ 	return retval;
+ }
+ 
+-int recvfrom(int s, void *buf, size_t len, int flags,
++ssize_t recvfrom(int s, void *buf, size_t len, int flags,
+ 	     struct sockaddr *from, socklen_t *fromlen)
+ {
+ 	int retval;
+@@ -254,7 +254,7 @@
+ 	return retval;
+ }
+ 
+-int send(int s, const void *msg, size_t len , int flags)
++ssize_t send(int s, const void *msg, size_t len , int flags)
+ {
+ 	int retval;
+ 
+@@ -263,7 +263,7 @@
+ 	return retval;
+ }
+ 
+-int sendto(int s, const void *msg, size_t len, int flags,
++ssize_t sendto(int s, const void *msg, size_t len, int flags,
+ 	   const struct sockaddr *to, socklen_t tolen)
+ {
+ 	int retval;
