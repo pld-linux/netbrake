@@ -34,7 +34,7 @@ pliki np za. pomoc± wgeta czy lynksa.
 %build
 %configure
 
-%{__make} CFLAGS="%{rpmcflags} "
+%{__make} CFLAGS="%{rpmcflags} " CC="%{__cc}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
