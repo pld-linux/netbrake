@@ -1,8 +1,8 @@
-Summary:	Netbrake is an utility to limit the bandwidth used by a process
-Summary(pl):	Netbrake jest narzêdziem do ograniczania ³±cza u¿ywanego przez proces
+Summary:	Netbrake - an utility to limit the bandwidth used by a process
+Summary(pl):	Netbrake - narzêdzie do ograniczania ³±cza u¿ywanego przez proces
 Name:		netbrake
 Version:	0.2
-Release:	1
+Release:	2
 # netbrake app contains GPLed antigetopt.c, so it's whole GPLed
 License:	GPL (application), BSD-like (libnetbrake)
 Group:		Applications/Networking
@@ -41,6 +41,7 @@ tekstowych na URL-ach.
 
 %build
 # not autoconf configure
+LIBPATH="%{_libdir}" \
 ./configure
 
 %{__make} \
