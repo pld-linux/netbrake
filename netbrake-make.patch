@@ -49,3 +49,15 @@
  #define __USE_GNU
  #include <dlfcn.h>
  
+--- Makefile.in.orig	2001-09-10 15:40:50.000000000 +0200
++++ Makefile.in	2004-04-02 22:04:00.784059408 +0200
+@@ -37,6 +37,9 @@
+ 	@$(CC) -MM *.c > .depend
+ 	@echo Making dependences
+ 
++libnetbrake.o: libnetbrake.c
++	$(CC) -I. $(CFLAGS) -fPIC $(COMPILE_TIME) $(DEFS) -c $< -o $@
++
+ .c.o:
+ 	$(CC) -I. $(CFLAGS) $(COMPILE_TIME) $(DEFS) -c $< -o $@
+ 
