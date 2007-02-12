@@ -1,5 +1,5 @@
 Summary:	Netbrake - an utility to limit the bandwidth used by a process
-Summary(pl):	Netbrake - narzêdzie do ograniczania ³±cza u¿ywanego przez proces
+Summary(pl.UTF-8):   Netbrake - narzÄ™dzie do ograniczania Å‚Ä…cza uÅ¼ywanego przez proces
 Name:		netbrake
 Version:	0.2
 Release:	2
@@ -24,14 +24,14 @@ slow web/irc/... experience. I use it mostly to download big files
 Netbrake also implements a very simple HTTP filesystem extension, so
 you can use the standard text utils against some URL.
 
-%description -l pl
-Netbrake jest narzêdziem do ograniczania przepustowo¶ci ³±cza
-u¿ywanego przez proces. Nie wymaga modyfikacji j±dra, dzia³a na
-zwyk³ym koncie, jest u¿ywane g³ównie wtedy, gdy chcemy ¶ci±gn±æ du¿e
-pliki np. za pomoc± wgeta czy lynksa.
+%description -l pl.UTF-8
+Netbrake jest narzÄ™dziem do ograniczania przepustowoÅ›ci Å‚Ä…cza
+uÅ¼ywanego przez proces. Nie wymaga modyfikacji jÄ…dra, dziaÅ‚a na
+zwykÅ‚ym koncie, jest uÅ¼ywane gÅ‚Ã³wnie wtedy, gdy chcemy Å›ciÄ…gnÄ…Ä‡ duÅ¼e
+pliki np. za pomocÄ… wgeta czy lynksa.
 
-Netbrake ma tak¿e zaimplementowane proste rozszerzenie systemu
-plików o HTTP, dziêki czemu mo¿na u¿ywaæ standardowych narzêdzi
+Netbrake ma takÅ¼e zaimplementowane proste rozszerzenie systemu
+plikÃ³w o HTTP, dziÄ™ki czemu moÅ¼na uÅ¼ywaÄ‡ standardowych narzÄ™dzi
 tekstowych na URL-ach.
 
 %prep
