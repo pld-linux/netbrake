@@ -1,5 +1,5 @@
 Summary:	Netbrake - an utility to limit the bandwidth used by a process
-Summary(pl.UTF-8):   Netbrake - narzędzie do ograniczania łącza używanego przez proces
+Summary(pl.UTF-8):	Netbrake - narzędzie do ograniczania łącza używanego przez proces
 Name:		netbrake
 Version:	0.2
 Release:	2
